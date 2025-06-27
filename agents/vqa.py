@@ -2,12 +2,12 @@ from engine import LMMEngine
 from google.genai import types
 from sysprompt import SystemPrompts
 
-class ReferringAgent:
+class VQAAgent:
     def __init__(self, engine:LMMEngine):
         self.engine = engine
-        self.system_prompt = SystemPrompts.REFERRING_PROMPT
+        self.system_prompt = SystemPrompts.VQA_PROMPT
 
-    def ReferringQuestionAnswer(self, image_bytes, question):
+    def VisualQuestionAnswer(self, image_bytes, question):
         """Answer a question about an image."""
         message = [
             self.system_prompt,
